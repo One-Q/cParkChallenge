@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:android": "concurrently \"cd server && node index.js\" \"cd client && react-native run-android\""
+    "dev:android": "concurrently \"cd server && npm start\" \"cd client && react-native run-android\""
   },
   "keywords": [],
   "author": "",

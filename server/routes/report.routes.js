@@ -1,10 +1,11 @@
-const Router = require('express').Router;
+import { Router } from 'express';
+import { sendReport, listReports } from '../controllers/report.controller';
 
 const router = new Router();
 
-router.route('/')
-  .post((req, res) => {
-    res.json({test: 'test'})
-  })
+router.route('/').post(sendReport)
 
-module.exports = router;
+router.route('/:lat/:long').get(listReports)
+
+
+export default router;
