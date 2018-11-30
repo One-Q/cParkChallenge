@@ -1,4 +1,4 @@
-import mongoose, { Schema, model } from 'mongoose';
+import mongoose, { Schema, model, Collection } from 'mongoose';
 
 const reportSchema = new Schema({
   title: { type: String, required: true },
@@ -15,5 +15,7 @@ const reportSchema = new Schema({
     }
   }
 });
+
+reportSchema.index({ position: '2dsphere' })
 
 export default model('Report', reportSchema);

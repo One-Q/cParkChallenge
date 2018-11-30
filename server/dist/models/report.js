@@ -26,4 +26,6 @@ var reportSchema = new _mongoose.Schema({
   }
 });
 
+reportSchema.index({ position: '2dsphere' });
+
 exports.default = (0, _mongoose.model)('Report', reportSchema);
