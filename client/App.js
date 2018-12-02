@@ -8,7 +8,13 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
+import ReportForm from './components/ReportForm';
+import ReportList from './components/ReportList';
+
+/*
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -24,6 +30,9 @@ export default class App extends Component<Props> {
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
+
+        <ReportForm />
+        <ReportList />
       </View>
     );
   }
@@ -47,3 +56,30 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+*/
+
+export default createAppContainer(createBottomTabNavigator(
+  {
+    Form: ReportForm,
+    List: ReportList
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === 'Form') {
+          iconName = `md-save${focused ? '' : ''}`;
+        } else if (routeName === 'List') {
+          iconName = `md-list${focused ? '' : ''}`;
+        }
+        
+        return <Ionicons name={iconName} size={horizontal ? 20 : 25} color={tintColor} />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    },
+  }
+))

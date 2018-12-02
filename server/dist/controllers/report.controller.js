@@ -35,8 +35,8 @@ async function sendReport(req, res) {
   try {
     var newReport = await report.save();
     res.status(201).json({ report: newReport });
-  } catch (err) {
-    res.status(500).send(err);
+  } catch (error) {
+    res.status(500).json({ error: error });
   }
 }
 
@@ -53,7 +53,7 @@ async function listReports(req, res) {
 
   var maxDistance = 10000; // in meters
   var limit = 10;
-  var timeSort = -1; // 1 = older to new
+  var timeSort = -1; // 1 = older to new; -1 = new to older
 
   try {
     var reports = await _report2.default.find({
@@ -68,7 +68,7 @@ async function listReports(req, res) {
       }
     }).sort({ time: timeSort }).limit(limit);
     res.status(200).json({ reports: reports });
-  } catch (err) {
-    res.status(500).send(err);
+  } catch (error) {
+    res.status(500).json({ error: error });
   }
 }
