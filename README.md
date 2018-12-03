@@ -36,3 +36,10 @@ Server:
 Before starting the project, make sure you've launched mongod and the emulator.
 
 Then: `npm run dev:android`
+
+
+## Doc
+
+To generate the documentation you just need to run : `npm run docs`.
+
+Then you can open the index.html in server/docs.
