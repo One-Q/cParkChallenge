@@ -16,13 +16,15 @@ Then the command: `npm run install:all` to install all the dependencies of the c
 
 There are two config files, one for the client (client/config.js) and one for the server (server/config.js)
 
-Client: ```javascript
+Client: 
+```javascript
   {
     URL: 'http://IP:8000/' // Where IP is your ip adress. Localhost doesn't work
   }
 ```
 
-Server: ```javascript
+Server: 
+```javascript
   {
     MONGO_URL: process.env.MONGO_URL || 'mongodb://localhost:27017/cparkchallenge',
     PORT: process.env.PORT || 8000,
