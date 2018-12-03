@@ -43,3 +43,8 @@ Then: `npm run dev:android`
 To generate the documentation you just need to run : `npm run docs`.
 
 Then you can open the index.html in server/docs.
+
+
+## Unit Tests
+
+Go to the server folder with the command line and launch: `npm run test`
