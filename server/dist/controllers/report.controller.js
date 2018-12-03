@@ -53,9 +53,7 @@ async function listReports(req, res) {
       long = _req$params.long;
 
 
-  if (lat < -90 || lat > 90 || long < -180 || long > 190) {
-    return res.status(400).json({ error: 'The lat must be between -90 and 90. The long must be between -180 and 180' });
-  }
+  if (lat < -90 || lat > 90 || long < -180 || long > 190) return res.status(400).json({ error: 'The lat must be between -90 and 90. The long must be between -180 and 180' });
 
   var maxDistance = 10000; // in meters
   var limit = 10;

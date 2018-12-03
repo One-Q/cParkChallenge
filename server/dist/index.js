@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -49,6 +53,4 @@ _mongoose2.default.connect(_config2.default.MONGO_URL, function (error) {
 // Routes
 app.use('/report', _report2.default);
 
-app.listen(_config2.default.PORT, function () {
-  console.log('App is listening on port ' + _config2.default.PORT);
-});
+exports.default = app;

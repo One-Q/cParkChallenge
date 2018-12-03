@@ -28,6 +28,4 @@ mongoose.connect(config.MONGO_URL, (error) => {
 // Routes
 app.use('/report', reportRoutes);
 
-app.listen(config.PORT, () => {
-  console.log(`App is listening on port ${config.PORT}`);
-})
+export default app;
