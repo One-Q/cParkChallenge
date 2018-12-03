@@ -10,6 +10,10 @@ var _mongoose2 = _interopRequireDefault(_mongoose);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Report Model
+ * Mandatory fields: title, time and position
+ */
 var reportSchema = new _mongoose.Schema({
   title: { type: String, required: true },
   time: { type: Date, required: true },
