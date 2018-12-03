@@ -4,9 +4,9 @@
 
 First of all you need to have these utilities installed:
   - NodeJS
-  - React Native
+  - React Native (react-native command line)
   - MongoDB
-  - Everything that is relative to Android (Android SDK, emulator,...)
+  - Everything that is related to Android (Android SDK, emulator,...)
   
 The first command you have to launch is: `npm install`
 
